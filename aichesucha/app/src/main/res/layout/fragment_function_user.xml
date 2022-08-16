@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_DCDCDC">
+
+    <TextView
+        android:id="@+id/function_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+        android:textSize="@dimen/sp_18"
+        android:textColor="@color/color_FFFFFF"
+        android:text="@string/txt_function" />
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:numColumns="4"
+        android:verticalSpacing="@dimen/dp_35"
+        android:horizontalSpacing="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:listSelector="@color/transparent"/>
+
+</LinearLayout>

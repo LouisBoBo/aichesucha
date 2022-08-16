@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/dp_12"
+        android:background="@drawable/bg_ffffff_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_50"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/sp_16"
+            android:gravity="center"
+            android:textColor="@color/color_333333"
+            android:text="@string/txt_user_author_select"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E5E5E5"/>
+
+        <TextView
+            android:id="@+id/tv_role_manager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/color_00A7FF"
+            android:gravity="center"
+            android:text="@string/txt_role_manager"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E5E5E5"/>
+
+        <TextView
+            android:id="@+id/tv_role_user"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/color_00A7FF"
+            android:gravity="center"
+            android:text="@string/txt_role_user"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/color_00A7FF"
+        android:layout_marginBottom="@dimen/dp_12"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/bg_ffffff_10"
+        android:gravity="center"
+        android:text="@string/txt_cancel"/>
+
+</LinearLayout>

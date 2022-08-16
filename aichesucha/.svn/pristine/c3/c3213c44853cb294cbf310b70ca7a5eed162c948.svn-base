@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acsc.iml" filepath="$PROJECT_DIR$/.idea/modules/acsc.iml" group="acsc" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="acsc/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arms/arms.iml" filepath="$PROJECT_DIR$/.idea/modules/arms/arms.iml" group="acsc/arms" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arms-imageloader-glide/arms-imageloader-glide.iml" filepath="$PROJECT_DIR$/.idea/modules/arms-imageloader-glide/arms-imageloader-glide.iml" group="acsc/arms-imageloader-glide" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/webrtc_ns/webrtc_ns.iml" filepath="$PROJECT_DIR$/.idea/modules/webrtc_ns/webrtc_ns.iml" group="acsc/webrtc_ns" />
+    </modules>
+  </component>
+</project>

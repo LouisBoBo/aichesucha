@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_255"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_border"
+        android:layout_width="@dimen/dp_255"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_22b2fd_stroke"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_27"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_22b2fd_stroke_top"
+            >
+
+            <TextView
+                android:id="@+id/tv_device_state"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="@string/txt_device_name"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/sp_12" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="@dimen/dp_6"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_location_type"
+                    android:layout_width="@dimen/dp_18"
+                    android:layout_height="@dimen/dp_17"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/dp_1"
+                    android:src="@mipmap/icon_info_gps"
+                    android:textSize="@dimen/sp_12" />
+
+                <ImageView
+                    android:id="@+id/iv_satellite"
+                    android:layout_width="@dimen/dp_18"
+                    android:layout_height="@dimen/dp_17"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/icon_info_weixing" />
+
+                <TextView
+                    android:id="@+id/tv_satellite_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:text="2"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="@dimen/sp_8" />
+
+                <ImageView
+                    android:id="@+id/iv_signal"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_18"
+                    android:src="@mipmap/ic_map_signal5" />
+
+                <TextView
+                    android:id="@+id/tv_signal_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:layout_marginStart="@dimen/dp_1"
+                    android:text="2"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="@dimen/sp_8" />
+
+                <TextView
+                    android:id="@+id/tv_electric"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_14"
+                    android:layout_marginStart="@dimen/dp_2"
+                    android:background="@mipmap/ic_map_ele5"
+                    android:gravity="center"
+                    android:text="12%"
+                    android:textSize="@dimen/sp_8" />
+
+                <ImageView
+                    android:id="@+id/iv_power"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:gravity="center"
+                    android:src="@mipmap/ic_recharge" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/info_window_mid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/dp_2"
+            android:layout_marginStart="@dimen/dp_2"
+            android:background="@color/color_white_110"
+            >
+
+
+            <LinearLayout
+                android:id="@+id/ll_speed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_2"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_device_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="0.00km/h"
+                    android:textColor="@color/color_343434"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_day_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:gravity="center_vertical"
+                    android:text="0.00km"
+                    android:textColor="@color/color_343434"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/tv_acc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/color_343434"
+                    android:textSize="@dimen/sp_12" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_location_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_2"
+                android:gravity="center_vertical"
+                android:text="@string/txt_function_location_mode"
+                android:textColor="@color/color_343434"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_static_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_2"
+                android:text="@string/txt_static_time"
+                android:textColor="@color/color_343434"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_communication_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_2"
+                android:gravity="center_vertical"
+                android:text="@string/txt_communication_time"
+                android:textColor="@color/color_343434"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_location_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_2"
+                android:gravity="center_vertical"
+                android:text="@string/txt_location_time"
+                android:visibility="gone"
+                android:textColor="@color/color_343434"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:text="@string/txt_address"
+                android:textColor="@color/color_343434"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_255"
+            android:layout_height="@dimen/dp_35"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_22b2fd_stroke_bottom"
+            >
+
+            <LinearLayout
+                android:id="@+id/ll_history_track"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:src="@mipmap/icon_map_track" />
+
+                <TextView
+                    android:id="@+id/tv_history_track"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_6"
+                    android:gravity="center"
+                    android:text="@string/txt_track"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="@dimen/sp_13" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_device_detail"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/icon_map_device" />
+
+                <TextView
+                    android:id="@+id/tv_device_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_6"
+                    android:gravity="center"
+                    android:text="@string/txt_function_detail"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="@dimen/sp_13" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_navigation"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/icon_map_daohang" />
+
+                <TextView
+                    android:id="@+id/tv_navigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_6"
+                    android:gravity="center"
+                    android:text="@string/txt_function_navigation"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="@dimen/sp_13" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_15"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_arrow_down" />
+</LinearLayout>

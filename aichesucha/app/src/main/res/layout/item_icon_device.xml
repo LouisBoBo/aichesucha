@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_FFFFFF">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_line_on_car_small"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:layout_marginStart="@dimen/dp_12"/>
+
+    <TextView
+        android:id="@+id/tv_icon_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/color_333333"
+        android:layout_marginStart="@dimen/dp_17"
+        android:text="@string/txt_device_car_0"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/iv_icon"/>
+
+    <ImageView
+        android:id="@+id/iv_select"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:src="@mipmap/icon_check_select"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/iv_icon"
+        android:layout_marginStart="@dimen/dp_45"
+        android:background="@color/color_F5F5F5"/>
+
+</RelativeLayout>

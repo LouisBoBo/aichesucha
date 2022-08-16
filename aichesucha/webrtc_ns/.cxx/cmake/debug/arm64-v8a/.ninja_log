@@ -1,0 +1,14 @@
+# ninja log v5
+0	225	1655720444	CMakeFiles/webrtc_ns.dir/src/main/cpp/noise_suppression.c.o	6af47a9507bb0c0b
+1	431	1655720444	CMakeFiles/webrtc_ns.dir/src/main/cpp/noise_suppression_jni.c.o	4bed3850d9e0f372
+431	476	1655720444	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libwebrtc_ns.so	cc18c8e69e5beb5c
+0	11	0	clean	6110ed06a26b788b
+0	11	0	clean	6110ed06a26b788b
+1	102	1655725104	CMakeFiles/webrtc_ns.dir/src/main/cpp/noise_suppression.c.o	6af47a9507bb0c0b
+1	151	1655725104	CMakeFiles/webrtc_ns.dir/src/main/cpp/noise_suppression_jni.c.o	4bed3850d9e0f372
+151	209	1655725104	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libwebrtc_ns.so	cc18c8e69e5beb5c
+0	9	0	clean	6110ed06a26b788b
+0	10	0	clean	6110ed06a26b788b
+0	145	1655729244	CMakeFiles/webrtc_ns.dir/src/main/cpp/noise_suppression.c.o	6af47a9507bb0c0b
+2	244	1655729244	CMakeFiles/webrtc_ns.dir/src/main/cpp/noise_suppression_jni.c.o	4bed3850d9e0f372
+244	303	1655729245	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libwebrtc_ns.so	cc18c8e69e5beb5c

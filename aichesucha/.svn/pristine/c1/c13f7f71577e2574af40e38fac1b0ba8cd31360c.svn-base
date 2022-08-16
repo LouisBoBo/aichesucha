@@ -1,0 +1,171 @@
+package com.car.scth.mvp.ui.activity;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import com.jess.arms.base.BaseActivity;
+import com.jess.arms.di.component.AppComponent;
+import com.jess.arms.utils.ArmsUtils;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import com.car.scth.app.MyApplication;
+import com.car.scth.di.component.DaggerSimDetailInfoComponent;
+import com.car.scth.mvp.contract.SimDetailInfoContract;
+import com.car.scth.mvp.model.api.Api;
+import com.car.scth.mvp.model.bean.SimDetailResultBean;
+import com.car.scth.mvp.presenter.SimDetailInfoPresenter;
+
+import com.car.scth.R;
+import com.car.scth.mvp.utils.ConstantValue;
+import com.car.scth.mvp.utils.ToastUtils;
+import com.car.scth.mvp.utils.Utils;
+
+
+import static com.jess.arms.utils.Preconditions.checkNotNull;
+
+
+/**
+ * ================================================
+ * Description:
+ * <p>
+ * Created by MVPArmsTemplate on 08/03/2021 17:33
+ * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
+ * <a href="https://github.com/JessYanCoding">Follow me</a>
+ * <a href="https://github.com/JessYanCoding/MVPArms">Star me</a>
+ * <a href="https://github.com/JessYanCoding/MVPArms/wiki">See me</a>
+ * <a href="https://github.com/JessYanCoding/MVPArmsTemplate">模版请保持更新</a>
+ * ================================================
+ */
+public class SimDetailInfoActivity extends BaseActivity<SimDetailInfoPresenter> implements SimDetailInfoContract.View {
+
+    @BindView(R.id.btn_recharge)
+    Button btnRecharge; // 充值
+    @BindView(R.id.tv_flow)
+    TextView tvRemainingFlow; // 剩余流量
+    @BindView(R.id.tv_total_flow)
+    TextView tvFlowTotal; // 总流量
+    @BindView(R.id.tv_use_flow)
+    TextView tvFlowUse; // 已用流量
+    @BindView(R.id.tv_total_sms)
+    TextView tvSmsTotal; // 总短信
+    @BindView(R.id.tv_use_sms)
+    TextView tvSmsUse; // 已用短信
+    @BindView(R.id.tv_remain_sms)
+    TextView tvSmsSurplus; //剩余短信
+    @BindView(R.id.tv_state)
+    TextView tvSimStatus; // 卡状态
+    @BindView(R.id.tv_balance)
+    TextView tvBalance; // 余额
+    @BindView(R.id.tv_sim_state)
+    TextView tvStatus; // sim卡在线状态
+    @BindView(R.id.tv_iccid)
+    TextView tvIccidNumber; // iccid
+    @BindView(R.id.tv_sim_no)
+    TextView tvSimNumber; // sim卡号
+    @BindView(R.id.tv_open_time)
+    TextView tvActivationTime; // 激活时间
+    @BindView(R.id.tv_close_time)
+    TextView tvExpireDate; // 到期时间
+
+    private String mIccid; // iccid号
+    private String mSimei; // simei号
+    private boolean isRecharge = false; // 是否可充值
+    private String simNo; // sim卡卡号
+    private String simType; // sim卡类型
+
+    private final static String Detail_Info = "DetailInfo";
+    public static Intent newInstance(SimDetailResultBean simDetailResultBean) {
+        Intent intent = new Intent(MyApplication.getMyApp(), SimDetailInfoActivity.class);
+        intent.putExtra(Detail_Info, simDetailResultBean);
+        return intent;
+    }
+    @Override
+    public void setupActivityComponent(@NonNull AppComponent appComponent) {
+        DaggerSimDetailInfoComponent.builder()
+                .appComponent(appComponent)
+                .view(this)
+                .build()
+                .inject(this);
+    }
+
+    @Override
+    public int initView(@Nullable Bundle savedInstanceState) {
+        return R.layout.activity_sim_detail_info;//setContentView(id);
+    }
+
+    @Override
+    public void initData(@Nullable Bundle savedInstanceState) {
+        setTitle(getString(R.string.txt_function_sim));
+        SimDetailResultBean simDetailResultBean = (SimDetailResultBean)getIntent().getSerializableExtra(Detail_Info);
+        if (simDetailResultBean != null)
+            showDetailView(simDetailResultBean);
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void showDetailView(SimDetailResultBean simDetailResultBean){
+        mIccid = simDetailResultBean.getIccid();
+        simNo = simDetailResultBean.getPhone();
+        simType = simDetailResultBean.getType();
+        isRecharge = simDetailResultBean.isIs_recharge();
+        tvRemainingFlow.setText(((double) (simDetailResultBean.getTflow() - simDetailResultBean.getRflow()) / 100) + "");
+        tvFlowTotal.setText(((double) simDetailResultBean.getTflow() / 100) + "M");
+        tvFlowUse.setText(((double) simDetailResultBean.getRflow() / 100) + "M");
+        tvStatus.setText(simDetailResultBean.getStatus());
+        tvBalance.setText(Utils.formatValue((double) simDetailResultBean.getBalance() / 100));
+        tvSmsTotal.setText(simDetailResultBean.getSsms() + getString(R.string.txt_sms_unit));
+        tvSmsUse.setText(simDetailResultBean.getRsms() + getString(R.string.txt_sms_unit));
+        tvSmsSurplus.setText((simDetailResultBean.getSsms() - simDetailResultBean.getRsms()) + getString(R.string.txt_sms_unit));
+        tvSimStatus.setText(simDetailResultBean.getDstate());
+        tvIccidNumber.setText(simDetailResultBean.getIccid());
+        tvSimNumber.setText(simDetailResultBean.getPhone());
+        tvActivationTime.setText(simDetailResultBean.getSperiod());
+        tvExpireDate.setText(simDetailResultBean.getEperiod());
+
+        //此APP 充值功能隐藏
+//        if (isRecharge){
+//            btnRecharge.setVisibility(View.VISIBLE);
+//        }
+    }
+
+    @OnClick({ R.id.btn_recharge})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.btn_recharge: // 充值
+                if (isRecharge){
+                    if (Utils.isButtonQuickClick(System.currentTimeMillis())) {
+                        launchActivity(PayWebViewActivity.newInstance(getString(R.string.txt_sim_recharge),
+                                Api.Pay_Sim_Recharge + ConstantValue.getPaySimRechargeValue(simNo, simType, mIccid)));
+                    }
+                }else{
+                    ToastUtils.show(getString(R.string.txt_sim_recharge_error));
+                }
+                break;
+        }
+    }
+
+
+    @Override
+    public void showMessage(@NonNull String message) {
+        checkNotNull(message);
+        ArmsUtils.snackbarText(message);
+    }
+
+    @Override
+    public void launchActivity(@NonNull Intent intent) {
+        checkNotNull(intent);
+        ArmsUtils.startActivity(intent);
+    }
+
+    @Override
+    public void killMyself() {
+        finish();
+    }
+}

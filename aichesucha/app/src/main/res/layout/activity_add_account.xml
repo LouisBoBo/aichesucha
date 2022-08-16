@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_FFFFFF">
+
+    <include layout="@layout/include_title"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_E5E5E5"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:background="@color/color_F7F7F7"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12">
+
+        <TextView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_333333"
+            android:text="@string/txt_add_family_account"/>
+
+        <com.car.scth.mvp.ui.view.ClearEditText
+            android:id="@+id/edt_account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_FFFFFF"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_B4B4B4"
+            android:hint="@string/txt_add_family_account_hint"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@color/color_E5E5E5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12">
+
+        <TextView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_333333"
+            android:text="@string/txt_add_family_psd"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_FFFFFF"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_333333"
+            android:gravity="center_vertical"
+            android:textColorHint="@color/color_B4B4B4"
+            android:text="123456"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@color/color_E5E5E5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12">
+
+        <TextView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_333333"
+            android:text="@string/txt_user_author"/>
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_333333"
+            android:drawableEnd="@drawable/icon_right"
+            android:text="@string/txt_select_please"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@color/color_E5E5E5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12">
+
+        <TextView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_333333"
+            android:text="@string/txt_add_family_name"/>
+
+        <com.car.scth.mvp.ui.view.ClearEditText
+            android:id="@+id/edt_nike_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_FFFFFF"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_B4B4B4"
+            android:hint="@string/txt_add_family_name_hint"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:visibility="gone"
+        android:background="@color/color_E5E5E5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12">
+
+        <TextView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_333333"
+            android:text="@string/txt_add_family_email"/>
+
+        <com.car.scth.mvp.ui.view.ClearEditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_FFFFFF"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_B4B4B4"
+            android:hint="@string/txt_input_email"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@color/color_E5E5E5"/>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/bg_00a7ff_30"
+        android:gravity="center"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/color_FFFFFF"
+        android:text="@string/txt_save"/>
+
+</LinearLayout>

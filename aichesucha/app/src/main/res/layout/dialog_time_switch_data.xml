@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@drawable/bg_ffffff_6">
+
+        <TextView
+            android:id="@+id/tv_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@color/color_333333"
+            tools:text="2019-10-21"/>
+
+        <com.car.scth.mvp.ui.view.data.haibin.CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="#fff"
+            app:calendar_padding="10dp"
+            app:current_month_lunar_text_color="#000"
+            app:current_month_text_color="#333333"
+            app:max_year="2050"
+            app:min_year="2010"
+            app:month_view="com.car.scth.mvp.ui.view.data.TrackCustomMultiMonthView"
+            app:month_view_show_mode="mode_only_current"
+            app:other_month_lunar_text_color="#e1e1e1"
+            app:other_month_text_color="#e1e1e1"
+            app:scheme_text="假"
+            app:scheme_text_color="#333"
+            app:scheme_theme_color="@color/colorBlue"
+            app:select_mode="multi_mode"
+            app:selected_lunar_text_color="#000"
+            app:selected_text_color="#000"
+            app:selected_theme_color="@color/colorBlue"
+            app:week_background="@color/color_FFFFFF"
+            app:week_start_with="sun"
+            app:week_text_color="@color/colorBlue"
+            app:week_view="com.car.scth.mvp.ui.view.data.CustomMultiWeekView"
+            app:week_view_scrollable="true"
+            app:year_view_day_text_color="#333333"
+            app:year_view_day_text_size="9sp"
+            app:year_view_month_text_color="#ff0000"
+            app:year_view_month_text_size="20sp"
+            app:year_view_scheme_color="#f17706" />
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@color/color_00A7FF"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@string/txt_confirm"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:textSize="@dimen/sp_15"
+        android:textColor="@color/color_00A7FF"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@drawable/bg_ffffff_6"
+        android:text="@string/txt_cancel"/>
+
+</LinearLayout>

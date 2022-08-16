@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.vondear.RxTool:RxCamera:2.4.1@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/907d71fd1013b73e1d10f4361a2cddfc/jetified-RxCamera-2.4.1/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/907d71fd1013b73e1d10f4361a2cddfc/jetified-RxCamera-2.4.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/907d71fd1013b73e1d10f4361a2cddfc/jetified-RxCamera-2.4.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.vondear.RxTool/RxCamera/2.4.1/b64fde2dd5143391b8016ffb389e4ea5fe2b7bc8/RxCamera-2.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

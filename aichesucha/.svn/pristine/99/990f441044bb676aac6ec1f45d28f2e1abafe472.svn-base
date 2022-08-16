@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.vondear.RxTool:RxArcGisKit:2.3.9@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d068aac691e757f9f95c869d6694ef6c/jetified-RxArcGisKit-2.3.9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d068aac691e757f9f95c869d6694ef6c/jetified-RxArcGisKit-2.3.9/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.vondear.RxTool/RxArcGisKit/2.3.9/ce44d79894ee915b84a645636f91f52107daa309/RxArcGisKit-2.3.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

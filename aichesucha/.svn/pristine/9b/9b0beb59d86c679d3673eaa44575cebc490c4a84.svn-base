@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_F4F4F4">
+
+    <include layout="@layout/include_title"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_E5E5E5"/>
+
+    <EditText
+        android:id="@+id/edt_min"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/color_FFFFFF"
+        android:maxLength="4"
+        android:inputType="number"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
+        android:textSize="@dimen/sp_14"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_333333"
+        android:textColorHint="@color/color_999999"
+        android:hint="@string/txt_please_enter_the_positioning_interval"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/color_666666"
+        android:text="@string/txt_fly_hint"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/color_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/color_333333"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_12"
+            android:text="@string/txt_fly_mode"/>
+
+        <ImageView
+            android:id="@+id/iv_switch"
+            android:layout_width="@dimen/dp_43"
+            android:layout_height="@dimen/dp_26"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:src="@mipmap/icon_off_message"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_set"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/bg_00a7ff_30"
+        android:gravity="center"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/color_FFFFFF"
+        android:text="@string/txt_setting"/>
+
+</LinearLayout>

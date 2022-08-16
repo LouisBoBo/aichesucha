@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/tv_dump_energy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_group_list"
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="@dimen/dp_45"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dp_5"
+            android:padding="@dimen/dp_13"
+            android:src="@mipmap/icon_liebiao" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_E5E5E5" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <include layout="@layout/layout_location_function" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+{
+  "stringTable": {
+    "0": "F:/workspace/aichesucha/webrtc_ns/.cxx/cmake/release/armeabi",
+    "1": "--target=armv5te-none-linux-androideabi --gcc-toolchain=D:/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=D:/android-ndk-r16b/sysroot -Dwebrtc_ns_EXPORTS -I../../../../src/main/include -isystem D:/android-ndk-r16b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=19 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -Os -DNDEBUG -fPIC"
+  },
+  "buildFiles": [
+    "D:\\android-ndk-r16b\\build\\cmake\\android.toolchain.cmake",
+    "F:\\workspace\\aichesucha\\webrtc_ns\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"F:\\workspace\\aichesucha\\webrtc_ns\\.cxx\\cmake\\release\\armeabi\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"F:\\workspace\\aichesucha\\webrtc_ns\\.cxx\\cmake\\release\\armeabi\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "webrtc_ns-Release-armeabi": {
+      "buildCommand": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"F:\\workspace\\aichesucha\\webrtc_ns\\.cxx\\cmake\\release\\armeabi\" webrtc_ns",
+      "buildType": "release",
+      "toolchain": "1800149998",
+      "abi": "armeabi",
+      "artifactName": "webrtc_ns",
+      "files": [
+        {
+          "src": "F:\\workspace\\aichesucha\\webrtc_ns\\src\\main\\cpp\\noise_suppression.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "F:\\workspace\\aichesucha\\webrtc_ns\\src\\main\\cpp\\noise_suppression_jni.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "F:\\workspace\\aichesucha\\webrtc_ns\\build\\intermediates\\cmake\\release\\obj\\armeabi\\libwebrtc_ns.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "1800149998": {
+      "cCompilerExecutable": "D:\\android-ndk-r16b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": []
+}

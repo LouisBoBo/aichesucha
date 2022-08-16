@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="pixel_3" />
+        <device id="Nexus 7" />
+        <device id="Nexus 7 2013" />
+        <device id="pixel_3a" />
+        <device id="pixel_3_xl" />
+      </config>
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="LOGCAT_FORMAT_STRING" value="%1$s %4$c/%5$s: %6$s" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8424c071-a79b-4f5e-a0de-56f927662f64" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__cn_jiguang_sdk_jcore_2_6_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__cn_jiguang_sdk_jpush_3_8_6_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app" beforeDir="true" afterPath="$PROJECT_DIR$/app" afterDir="true" />
+      <change beforePath="$PROJECT_DIR$/app/agconnect-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/agconnect-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/arm64-v8a/libBaiduMapSDK_base_v5_4_3.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/arm64-v8a/libBaiduMapSDK_base_v6_0_0.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/arm64-v8a/libBaiduMapSDK_map_v6_0_0.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/arm64-v8a/libapp_BaiduPanoramaAppLib.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/arm64-v8a/libindoor.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/arm64-v8a/liblocSDK8a.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/arm64-v8a/librtbt828.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/arm64-v8a/libwtbt828.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/arm64-v8a/libztcodec2.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi-v7a/libBaiduMapSDK_base_v5_4_3.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi-v7a/libBaiduMapSDK_base_v6_0_0.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi-v7a/libBaiduMapSDK_map_v6_0_0.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi-v7a/libapp_BaiduPanoramaAppLib.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi-v7a/libindoor.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi-v7a/liblocSDK8a.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi-v7a/librtbt828.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi-v7a/libwtbt828.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi-v7a/libztcodec2.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi/libBaiduMapSDK_base_v5_4_3.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi/libBaiduMapSDK_base_v6_0_0.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi/libBaiduMapSDK_map_v6_0_0.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi/libapp_BaiduPanoramaAppLib.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi/libindoor.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi/liblocSDK8a.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi/librtbt828.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi/libwtbt828.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/armeabi/libztcodec2.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86/libBaiduMapSDK_base_v5_4_3.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86/libBaiduMapSDK_base_v6_0_0.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86/libBaiduMapSDK_map_v6_0_0.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86/libapp_BaiduPanoramaAppLib.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86/libindoor.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86/liblocSDK8a.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86/librtbt828.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86/libwtbt828.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86/libztcodec2.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86_64/libBaiduMapSDK_base_v5_4_3.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86_64/libBaiduMapSDK_base_v6_0_0.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86_64/libBaiduMapSDK_map_v6_0_0.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86_64/libapp_BaiduPanoramaAppLib.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86_64/libindoor.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86_64/liblocSDK8a.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86_64/librtbt828.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86_64/libwtbt828.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/x86_64/libztcodec2.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/app/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/car/scth/app/MyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/model/api/Api.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/model/api/Api.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/receiver/DefineMessageBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/receiver/ExampleUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/receiver/Logger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/receiver/MyJPushMessageReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/receiver/MyReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/receiver/PushService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/receiver/TagAliasOperatorHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/ui/activity/AlarmSettingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/ui/activity/AlarmSettingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/ui/activity/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/ui/activity/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/ui/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/ui/activity/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/ui/activity/PushSwitchActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/ui/activity/PushSwitchActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/ui/fragment/MineFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/ui/fragment/MineFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/utils/ConstantValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/utils/ConstantValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/utils/FileUtilApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/car/scth/mvp/utils/FileUtilApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/bg_login.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/bg_login.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmpmob/ShareSDK/assets/ShareSDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tmpmob/ShareSDK/assets/ShareSDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns" beforeDir="true" afterPath="$PROJECT_DIR$/webrtc_ns" afterDir="true" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/arm64-v8a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/arm64-v8a/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi-v7a/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/debug/armeabi/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/arm64-v8a/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi-v7a/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc_ns/.cxx/cmake/release/armeabi/rules.ninja" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="84B7N16620000545" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="F:\workspace\aichesucha\app\aichesucha.jks" />
+    <option name="KEY_ALIAS" value="sucha" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="ProjectId" id="20zSiTn5DP7Dosd0VqdePUKUlD0" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="app" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.car.scth.mvp.weiget" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\workspace\acsc\app\src\main\res\mipmap-xxhdpi" />
+      <recent name="F:\workspace\acsc\app" />
+      <recent name="F:\workspace\acsc\app\src" />
+      <recent name="F:\workspace\aichesucha\app\src\main\res\layout" />
+      <recent name="F:\workspace\aichesucha\app\src\main\res\mipmap-xxhdpi" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="F:\workspace\acsc" />
+          <option name="myCopyRoot" value="F:\workspace\acsc" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="F:\workspace\acsc" />
+          <option name="myCopyRoot" value="F:\workspace\acsc" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8424c071-a79b-4f5e-a0de-56f927662f64" name="Default Changelist" comment="" />
+      <created>1637046049442</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637046049442</updated>
+    </task>
+    <task id="LOCAL-00001" summary="优化">
+      <created>1637754868297</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637754868297</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="优化" />
+    <MESSAGE value="删除极光推送，配置新app 信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除极光推送，配置新app 信息" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="477" y="251" key="#PSD" timestamp="1637743630519">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="477" y="251" key="#PSD/0.0.1920.1040@0.0.1920.1040" timestamp="1637743630519" />
+    <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1637826524245">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1637826524245" />
+    <state x="488" y="122" key="CommitChangelistDialog2" timestamp="1637826633093">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="488" y="122" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1637826633093" />
+    <state x="85" y="95" key="DiffContextDialog" timestamp="1637826342525">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="85" y="95" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1637826342525" />
+    <state x="739" y="245" key="FileChooserDialogImpl" timestamp="1637312209562">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="245" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1637312209561" />
+    <state width="1876" height="161" key="GridCell.Tab.0.bottom" timestamp="1637826510322">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="161" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1637826510322" />
+    <state width="1876" height="161" key="GridCell.Tab.0.center" timestamp="1637826510321">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="161" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1637826510321" />
+    <state width="1876" height="161" key="GridCell.Tab.0.left" timestamp="1637826510321">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="161" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1637826510321" />
+    <state width="1876" height="161" key="GridCell.Tab.0.right" timestamp="1637826510322">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="161" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1637826510322" />
+    <state x="709" y="229" key="RollbackChangesDialog" timestamp="1637826624222">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="709" y="229" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1637826624222" />
+    <state x="461" y="151" key="SettingsEditor" timestamp="1637747210969">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1637747210969" />
+    <state x="681" y="250" width="564" height="524" key="StructurePopup" timestamp="1637735668767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="681" y="250" width="564" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1637735668767" />
+    <state x="773" y="364" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637826507941">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="773" y="364" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1637826507941" />
+    <state x="567" y="216" width="786" height="608" key="find.popup" timestamp="1637824103748">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="567" y="216" width="786" height="608" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1637824103748" />
+  </component>
+</project>

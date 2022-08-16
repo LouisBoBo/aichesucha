@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.car.scth",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "properties": [],
+      "versionCode": 10001,
+      "versionName": "1.0.1",
+      "enabled": true,
+      "outputFile": "ac_release_20220708164410.apk"
+    }
+  ]
+}

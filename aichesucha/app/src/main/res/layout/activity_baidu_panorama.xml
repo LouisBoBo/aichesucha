@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.baidu.lbsapi.panoramaview.PanoramaView
+            android:id="@+id/panoramaView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_black_40"
+            android:paddingStart="@dimen/dp_16"
+            android:paddingEnd="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_5"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/color_FFFFFF"
+            android:text="@string/txt_device_name"/>
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp_16"
+            android:paddingEnd="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:background="@color/color_black_40"
+            android:layout_below="@+id/tv_name"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/color_FFFFFF"
+            android:text="@string/txt_address"/>
+    </RelativeLayout>
+
+</LinearLayout>

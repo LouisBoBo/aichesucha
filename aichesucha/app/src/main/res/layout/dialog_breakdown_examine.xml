@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_ffffff_6">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_18"
+        android:textColor="@color/color_333333"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textStyle="bold"
+        android:text="@string/txt_breakdown_examine"/>
+
+    <TextView
+        android:id="@+id/tv_gsm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/color_333333"
+        android:text="@string/txt_gsm"/>
+
+    <TextView
+        android:id="@+id/tv_gps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/color_333333"
+        android:text="@string/txt_gps"/>
+
+    <TextView
+        android:id="@+id/tv_electric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/color_333333"
+        android:text="@string/txt_electric"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@color/color_E5E5E5"/>
+
+    <TextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:gravity="center"
+        android:textSize="@dimen/sp_18"
+        android:textColor="@color/color_00A7FF"
+        android:textStyle="bold"
+        android:text="@string/txt_confirm"/>
+
+</LinearLayout>

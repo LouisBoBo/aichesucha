@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFFFF"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_E5E5E5" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/bg_00a7ff_5">
+
+        <TextView
+            android:id="@+id/tv_total_mileage_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_18"
+            android:text="@string/txt_total_mileage"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_total_mileage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_total_mileage_hint"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text=""
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="@dimen/sp_28"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_total_mileage_hint"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_toEndOf="@+id/tv_total_mileage"
+            android:text="@string/txt_unit_mileage"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="@dimen/sp_13" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_total_mileage"
+            android:layout_marginStart="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_alarm_number"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_alarm_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                tools:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_total_mileage"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginEnd="@dimen/dp_80"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_alarm_speed_number"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_speed_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                tools:text="" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@color/color_F4F4F4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_E5E5E5" />
+
+    <LinearLayout
+        android:id="@+id/ll_start_time"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_start_time"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_start_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:drawableEnd="@drawable/icon_right"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="end"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_14"
+            tools:text="2019-08-20 13:50:20" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@color/color_E5E5E5" />
+
+    <LinearLayout
+        android:id="@+id/ll_end_time"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_end_time"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_end_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:drawableEnd="@drawable/icon_right"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="end"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_14"
+            tools:text="2019-08-20 13:50:20" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_E5E5E5" />
+
+    <Button
+        android:id="@+id/btn_request"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_25"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/bg_00a7ff_30"
+        android:gravity="center"
+        android:text="@string/txt_request"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="@dimen/sp_16" />
+
+</LinearLayout>

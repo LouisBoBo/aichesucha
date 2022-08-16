@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: cc.solart:turbo-recyclerview-helper:1.0.3-beta@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b000436657e9d5a01212ee1e70f37b50/jetified-turbo-recyclerview-helper-1.0.3-beta/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b000436657e9d5a01212ee1e70f37b50/jetified-turbo-recyclerview-helper-1.0.3-beta/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cc.solart/turbo-recyclerview-helper/1.0.3-beta/c289831c7698d9e89a4e2c09a244a35c18adc6c/turbo-recyclerview-helper-1.0.3-beta-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cc.solart/turbo-recyclerview-helper/1.0.3-beta/499112ed18dba3c090525586a302f48cafdf329a/turbo-recyclerview-helper-1.0.3-beta-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

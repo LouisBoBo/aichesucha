@@ -1,0 +1,8 @@
+# ninja log v5
+0	10	0	clean	6110ed06a26b788b
+0	11	0	clean	6110ed06a26b788b
+0	6	0	clean	6110ed06a26b788b
+0	10	0	clean	6110ed06a26b788b
+10	612	1657269854	CMakeFiles/webrtc_ns.dir/src/main/cpp/noise_suppression.c.o	6ef3d861ef02ba29
+12	1183	1657269854	CMakeFiles/webrtc_ns.dir/src/main/cpp/noise_suppression_jni.c.o	2a09d0adebb30cd1
+1183	1246	1657269854	../../../../build/intermediates/cmake/release/obj/armeabi-v7a/libwebrtc_ns.so	b07fd5d371d4c3f3

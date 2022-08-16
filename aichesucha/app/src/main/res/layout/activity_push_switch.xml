@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_F8F8F8">
+
+    <include layout="@layout/include_title"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_12"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/color_666666"
+        android:text="@string/txt_push_switch"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/color_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/color_333333"
+            android:text="@string/txt_message_push"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_2"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/color_999999"
+            android:text="@string/txt_allow_notification"/>
+
+        <ImageView
+            android:id="@+id/iv_message_push"
+            android:layout_width="@dimen/dp_43"
+            android:layout_height="@dimen/dp_27"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:src="@drawable/icon_switch_off"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_do_not_disturb_mode_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_12"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/color_666666"
+        android:text="@string/txt_do_not_disturb_mode"/>
+
+    <LinearLayout
+        android:id="@+id/ll_do_not_disturb_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/color_FFFFFF">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:textSize="@dimen/sp_14"
+                android:layout_centerVertical="true"
+                android:textColor="@color/color_333333"
+                android:text="@string/txt_do_not_disturb_mode_time"/>
+
+            <ImageView
+                android:id="@+id/iv_do_not_disturb_push"
+                android:layout_width="@dimen/dp_43"
+                android:layout_height="@dimen/dp_27"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_switch_off"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E5E5E5"/>
+
+        <LinearLayout
+            android:id="@+id/ll_start_time"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            tools:visibility="visible"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/color_666666"
+                android:text="@string/txt_start_time"/>
+
+            <TextView
+                android:id="@+id/tv_start_time"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:layout_marginStart="@dimen/dp_12"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/color_333333"
+                android:text="@string/txt_start_time"
+                android:gravity="end"
+                android:drawablePadding="@dimen/dp_10"
+                android:drawableEnd="@drawable/icon_right"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_time"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:layout_marginStart="@dimen/dp_12"
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:background="@color/color_E5E5E5"/>
+
+        <LinearLayout
+            android:id="@+id/ll_end_time"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:gravity="center_vertical"
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/color_666666"
+                android:text="@string/txt_end_time"/>
+
+            <TextView
+                android:id="@+id/tv_end_time"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:layout_marginStart="@dimen/dp_12"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/color_333333"
+                android:text="@string/txt_start_time"
+                android:gravity="end"
+                android:drawablePadding="@dimen/dp_10"
+                android:drawableEnd="@drawable/icon_right"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:background="@drawable/bg_00a7ff_30"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_35"
+        android:gravity="center"
+        android:textSize="@dimen/sp_16"
+        android:text="@string/txt_confirm"
+        android:textColor="@color/color_FFFFFF"/>
+
+</LinearLayout>

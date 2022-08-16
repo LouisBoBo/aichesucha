@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_FFFFFF">
+
+    <include layout="@layout/include_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_basic_package"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12">
+
+                <TextView
+                    android:id="@+id/tv_basic_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/color_333333"
+                    android:text="@string/txt_basic_package_money"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="@color/color_777777"
+                    android:layout_marginTop="@dimen/dp_3"
+                    android:layout_marginStart="@dimen/dp_5"
+                    android:layout_toEndOf="@+id/tv_basic_hint"
+                    android:text="@string/txt_charge_ok"/>
+
+                <com.car.scth.mvp.ui.view.NoScrollListView
+                    android:id="@+id/listView_basic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_basic_hint"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:dividerHeight="@dimen/dp_10"
+                    android:divider="@color/color_FFFFFF"
+                    android:listSelector="@color/transparent"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_flow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12">
+
+                <TextView
+                    android:id="@+id/tv_charge_flow_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/color_333333"
+                    android:text="@string/txt_charge_flow"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="@color/color_777777"
+                    android:layout_marginTop="@dimen/dp_3"
+                    android:layout_marginStart="@dimen/dp_5"
+                    android:layout_toEndOf="@+id/tv_charge_flow_hint"
+                    android:text="@string/txt_charge_ok"/>
+
+                <com.car.scth.mvp.ui.view.NoScrollListView
+                    android:id="@+id/listView_flow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:dividerHeight="@dimen/dp_10"
+                    android:divider="@color/color_FFFFFF"
+                    android:layout_below="@+id/tv_charge_flow_hint"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:listSelector="@color/transparent"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_sms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12">
+
+                <TextView
+                    android:id="@+id/tv_charge_sms_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/color_333333"
+                    android:text="@string/txt_charge_sms"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="@color/color_777777"
+                    android:layout_marginTop="@dimen/dp_3"
+                    android:layout_marginStart="@dimen/dp_5"
+                    android:layout_toEndOf="@+id/tv_charge_sms_hint"
+                    android:text="@string/txt_charge_ok"/>
+
+                <com.car.scth.mvp.ui.view.NoScrollListView
+                    android:id="@+id/listView_sms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:dividerHeight="@dimen/dp_10"
+                    android:divider="@color/color_FFFFFF"
+                    android:layout_below="@+id/tv_charge_sms_hint"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:listSelector="@color/transparent"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_12"
+                android:background="@color/color_F4F4F4"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_16"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginStart="@dimen/dp_12"
+                android:textColor="@color/color_333333"
+                android:text="@string/txt_pay_type"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp_12"
+                android:background="@color/color_E5E5E5"/>
+
+            <com.car.scth.mvp.ui.view.NoScrollListView
+                android:id="@+id/listView_pay_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="3"
+                android:divider="@color/color_E5E5E5"
+                android:dividerHeight="1dp"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:listSelector="@color/transparent"/>
+
+            <Button
+                android:id="@+id/btn_pay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:background="@drawable/bg_00a7ff_30"
+                android:gravity="center"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/color_FFFFFF"
+                android:text="@string/txt_recharge"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

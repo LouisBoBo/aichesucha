@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_F4F4F4">
+
+    <include layout="@layout/include_title"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_E5E5E5"/>
+
+    <TimePicker
+        android:id="@+id/time_picker"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_185"
+        android:background="@color/color_FFFFFF"
+        android:timePickerMode="spinner"
+        tools:ignore="UnusedAttribute" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/color_FFFFFF"
+        android:layout_marginTop="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@color/color_333333"
+            android:layout_marginStart="@dimen/dp_12"
+            android:text="@string/txt_repeat"/>
+
+        <TextView
+            android:id="@+id/tv_day"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_999999"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:gravity="end|center_vertical"
+            android:drawableEnd="@drawable/icon_right"
+            android:drawablePadding="@dimen/dp_10"
+            android:hint="@string/txt_select_please"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_E5E5E5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/color_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@color/color_333333"
+            android:layout_marginStart="@dimen/dp_12"
+            android:text="@string/txt_name_two"/>
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_999999"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:gravity="end|center_vertical"
+            android:maxLength="30"
+            android:background="@color/transparent"
+            android:hint="@string/txt_input_name"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_E5E5E5"/>
+
+</LinearLayout>

@@ -1,0 +1,617 @@
+package com.car.scth.mvp.ui.fragment;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Message;
+import android.provider.Settings;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.blankj.utilcode.util.ActivityUtils;
+import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.SPUtils;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.jess.arms.base.BaseFragment;
+import com.jess.arms.di.component.AppComponent;
+import com.jess.arms.utils.ArmsUtils;
+import com.car.scth.R;
+import com.car.scth.app.MyApplication;
+import com.car.scth.di.component.DaggerMineComponent;
+import com.car.scth.mvp.contract.MineContract;
+import com.car.scth.mvp.model.api.Api;
+import com.car.scth.mvp.model.api.ModuleValueService;
+import com.car.scth.mvp.model.bean.AlertBean;
+import com.car.scth.mvp.model.bean.CheckAppUpdateBean;
+import com.car.scth.mvp.model.bean.DataCenterBean;
+import com.car.scth.mvp.model.bean.DeviceBaseResultBean;
+import com.car.scth.mvp.model.bean.LogoutAccountResultBean;
+import com.car.scth.mvp.model.bean.UnbindPhoneResultBean;
+import com.car.scth.mvp.model.entity.BaseBean;
+import com.car.scth.mvp.model.putbean.CheckAppUpdatePutBean;
+import com.car.scth.mvp.model.putbean.LogoutAccountPutBean;
+import com.car.scth.mvp.model.putbean.SignOutPutBean;
+import com.car.scth.mvp.model.putbean.UnbindPhonePutBean;
+import com.car.scth.mvp.presenter.MinePresenter;
+import com.car.scth.mvp.ui.activity.LoginActivity;
+import com.car.scth.mvp.ui.activity.ModifyPasswordActivity;
+import com.car.scth.mvp.ui.activity.ModifyPhoneActivity;
+import com.car.scth.mvp.ui.activity.WebViewActivity;
+import com.car.scth.mvp.ui.adapter.DataCenterAdapter;
+import com.car.scth.mvp.utils.ConstantValue;
+import com.car.scth.mvp.utils.ResultDataUtils;
+import com.car.scth.mvp.utils.ToastUtils;
+import com.car.scth.mvp.utils.Utils;
+import com.car.scth.mvp.weiget.AlertAppDialog;
+import com.car.scth.mvp.weiget.DeviceFailDialog;
+import com.car.scth.mvp.weiget.UploadAppDialog;
+import com.umeng.analytics.MobclickAgent;
+import com.xiaomi.mipush.sdk.MiPushClient;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import butterknife.BindView;
+import butterknife.OnClick;
+
+import static com.jess.arms.utils.Preconditions.checkNotNull;
+
+
+/**
+ * ================================================
+ * Description:
+ * <p>
+ * Created by MVPArmsTemplate on 10/22/2020 16:55
+ * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
+ * <a href="https://github.com/JessYanCoding">Follow me</a>
+ * <a href="https://github.com/JessYanCoding/MVPArms">Star me</a>
+ * <a href="https://github.com/JessYanCoding/MVPArms/wiki">See me</a>
+ * <a href="https://github.com/JessYanCoding/MVPArmsTemplate">模版请保持更新</a>
+ * ================================================
+ */
+public class MineFragment extends BaseFragment<MinePresenter> implements MineContract.View {
+
+    @BindView(R.id.tv_account)
+    TextView tvAccount; // 账号
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView; // 功能
+
+    private List<DataCenterBean> dataCenterBeans;
+    private DataCenterAdapter mAdapter;
+
+    private static final int INSTALL_PERMISS_CODE = 101; // 允许安装位置应用回调码
+    private static final int INSTALL_APK_RESULT = 102; // apk安装情况，是否完成安装回调
+    private String mFilePath; // 版本更新下载url地址
+
+    private static final int Intent_Group_Manage = 11; // 设备管理相关
+
+    public static MineFragment newInstance() {
+        MineFragment fragment = new MineFragment();
+        return fragment;
+    }
+
+    @Override
+    public void setupFragmentComponent(@NonNull AppComponent appComponent) {
+        DaggerMineComponent //如找不到该类,请编译一下项�?
+                .builder()
+                .appComponent(appComponent)
+                .view(this)
+                .build()
+                .inject(this);
+    }
+
+    @Override
+    public View initView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_mine, container, false);
+    }
+
+    @Override
+    public void initData(@Nullable Bundle savedInstanceState) {
+        onAddDataCenter();
+
+        tvAccount.setText(ConstantValue.getAccount());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mAdapter = new DataCenterAdapter(R.layout.item_data_center, dataCenterBeans);
+        recyclerView.setAdapter(mAdapter);
+        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                if (Utils.isButtonQuickClick(System.currentTimeMillis())){
+                    onFunctionClick(dataCenterBeans.get(position).getId());
+                }
+            }
+        });
+    }
+    /**
+     * 添加功能数据
+     */
+    private void onAddDataCenter() {
+        boolean bindPhone = SPUtils.getInstance().getBoolean(ConstantValue.Is_Check_Phone, true);
+        dataCenterBeans = new ArrayList<>();
+        dataCenterBeans.add(new DataCenterBean(0, getString(R.string.txt_modify_password), R.mipmap.icon_mima));
+        if (bindPhone) { //国内用户
+            dataCenterBeans.add(new DataCenterBean(6, getString(R.string.txt_modify_phone_text), R.mipmap.icon_modify_phone));
+            dataCenterBeans.add(new DataCenterBean(3, getString(R.string.txt_unbind_phone_text), R.mipmap.icon_unbind_phone));
+        }
+        dataCenterBeans.add(new DataCenterBean(1, getString(R.string.txt_help_app), R.mipmap.icon_help));
+        dataCenterBeans.add(new DataCenterBean(2, getString(R.string.txt_check_update_app), R.mipmap.icon_jiancha));
+        dataCenterBeans.add(new DataCenterBean(4, getString(R.string.txt_xieyi_app), R.mipmap.icon_xieyi));
+        if (ConstantValue.isLoginForAccount()) {
+            dataCenterBeans.add(new DataCenterBean(5, getString(R.string.txt_delete_account), R.mipmap.icon_delete_accout));
+        }
+    }
+
+    /**
+     * 功能点击事件
+     * @param id
+     */
+    private void onFunctionClick(int id){
+        switch (id){
+            case 0:
+                launchActivity(ModifyPasswordActivity.newInstance());
+                break;
+            case 1:
+                launchActivity(WebViewActivity.newInstance(getString(R.string.txt_help_app), Api.Help_Center));
+                break;
+            case 2:
+                checkAppUpdate();
+                break;
+            case 3:
+                onUnbindPhone();
+                break;
+            case 4:
+                launchActivity(WebViewActivity.newInstance(getString(R.string.txt_privacy_policy_user), Api.Privacy_Policy));
+                break;
+            case 5:
+                onLogoutAccount();
+                break;
+            case 6:
+                launchActivity(ModifyPhoneActivity.newInstance());
+                break;
+
+        }
+    }
+
+    @OnClick({R.id.log_out})
+    public void onViewClicked(View view) {
+        if (Utils.isButtonQuickClick(System.currentTimeMillis())){
+            if (view.getId() == R.id.log_out) { // 保存
+                onSignOut();
+            }
+        }
+    }
+
+    /**
+     * 联系客服
+     */
+    private void onContactCustomerService(){
+        AlertBean bean = new AlertBean();
+        bean.setTitle(getString(R.string.txt_tip));
+        bean.setAlert(getString(R.string.txt_contact_customer_service_hint));
+        bean.setType(0);
+        AlertAppDialog dialog = new AlertAppDialog();
+        dialog.show(getFragmentManager(), bean, new AlertAppDialog.onAlertDialogChange() {
+            @Override
+            public void onConfirm() {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                Uri data = Uri.parse("tel:" + Api.Contact_Customer_Service);
+                intent.setData(data);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+        });
+    }
+
+    /**
+     * 解绑手机号码
+     */
+    private void onUnbindPhone(){
+        AlertBean bean = new AlertBean();
+        bean.setTitle(getString(R.string.txt_tip));
+        bean.setAlert(getString(R.string.txt_unbind_phone_hint));
+        bean.setType(0);
+        AlertAppDialog dialog = new AlertAppDialog();
+        dialog.show(getFragmentManager(), bean, new AlertAppDialog.onAlertDialogChange() {
+            @Override
+            public void onConfirm() {
+                submitUnbindPhone();
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+        });
+    }
+
+    /**
+     * 解绑手机号码
+     */
+    private void submitUnbindPhone(){
+
+        UnbindPhonePutBean.ParamsBean paramsBean = new UnbindPhonePutBean.ParamsBean();
+        UnbindPhonePutBean bean = new UnbindPhonePutBean();
+        bean.setParams(paramsBean);
+        bean.setFunc(ModuleValueService.Fuc_For_Unbind_Phone);
+        if (ConstantValue.isLoginForAccount()){
+            bean.setModule(ModuleValueService.Module_For_Role_Transfer);
+        }else{
+            bean.setModule(ModuleValueService.Module_For_Unbind_Phone);
+        }
+
+        showProgressDialog();
+
+        getPresenter().submitUnbindPhone(bean);
+    }
+
+    /**
+     * 注销账号
+     */
+    private void onLogoutAccount(){
+        AlertBean bean = new AlertBean();
+        bean.setTitle(getString(R.string.txt_tip));
+        bean.setAlert(getString(R.string.txt_logout_account_hint));
+        bean.setType(0);
+        AlertAppDialog dialog = new AlertAppDialog();
+        dialog.show(getFragmentManager(), bean, new AlertAppDialog.onAlertDialogChange() {
+            @Override
+            public void onConfirm() {
+                submitLogoutAccount();
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+        });
+    }
+
+    /**
+     * 提交注销账号
+     */
+    private void submitLogoutAccount(){
+        LogoutAccountPutBean bean = new LogoutAccountPutBean();
+        bean.setFunc(ModuleValueService.Fuc_For_Logout_Account);
+        bean.setModule(ModuleValueService.Module_For_Logout_Account);
+
+        showProgressDialog();
+
+        getPresenter().submitLogoutAccount(bean);
+    }
+
+    /**
+     * 检测app版本更新
+     */
+    private void checkAppUpdate() {
+        CheckAppUpdatePutBean.ParamsBean paramsBean = new CheckAppUpdatePutBean.ParamsBean();
+        paramsBean.setVersion(AppUtils.getAppVersionCode());
+        paramsBean.setApp_type("ac");
+
+        CheckAppUpdatePutBean bean = new CheckAppUpdatePutBean();
+        bean.setParams(paramsBean);
+        bean.setFunc(ModuleValueService.Fuc_For_App_Version);
+        bean.setModule(ModuleValueService.Module_For_App_Version);
+
+        showProgressDialog();
+
+        getPresenter().getAppUpdate(bean);
+    }
+
+    /**
+     * 是否选中设备
+     * @return
+     */
+    private boolean isSelectDevice(){
+        if(TextUtils.isEmpty(MyApplication.getMyApp().getImei() + "") || MyApplication.getMyApp().getImei() == 0){
+            ToastUtils.show(getString(R.string.txt_device_select_location));
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    /**
+     * 退出登录
+     */
+    private void onSignOut(){
+        AlertBean bean = new AlertBean();
+        bean.setTitle(getString(R.string.txt_tip));
+        bean.setAlert(getString(R.string.txt_sign_out_hint));
+        bean.setType(0);
+        AlertAppDialog dialog = new AlertAppDialog();
+        dialog.show(getFragmentManager(), bean, new AlertAppDialog.onAlertDialogChange() {
+            @Override
+            public void onConfirm() {
+                submitSignOut();
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+        });
+    }
+
+    /**
+     * 提交退出登录
+     */
+    private void submitSignOut(){
+        SignOutPutBean.ParamsBean paramsBean = new SignOutPutBean.ParamsBean();
+
+        SignOutPutBean bean = new SignOutPutBean();
+        bean.setFunc(ModuleValueService.Fuc_For_Sign_Out);
+        bean.setModule(ModuleValueService.Module_For_Sign_Out);
+        bean.setParams(paramsBean);
+
+        showProgressDialog();
+
+        getPresenter().submitSignOut(bean);
+    }
+
+    /**
+     * 通过此方法可以使 Fragment 能够与外界做一些交互和通信, 比如说外部的 Activity 想让自己持有的某�?Fragment 对象执行一些方�?
+     * 建议在有多个需要与外界交互的方法时, 统一�?{@link Message}, 通过 what 字段来区分不同的方法, �?{@link #setData(Object)}
+     * 方法中就可以 {@code switch} 做不同的操作, 这样就可以用统一的入口方法做多个不同的操�? 可以起到分发的作�?     * <p>
+     * 调用此方法时请注意调用时 Fragment 的生命周�? 如果调用 {@link #setData(Object)} 方法�?{@link Fragment#onCreate(Bundle)} 还没执行
+     * 但在 {@link #setData(Object)} 里却调用�?Presenter 的方�? 是会报空�? 因为 Dagger 注入是在 {@link Fragment#onCreate(Bundle)} 方法中执行的
+     * 然后才创建的 Presenter, 如果要做一些初始化操作,可以不必让外部调�?{@link #setData(Object)}, �?{@link #initData(Bundle)} 中初始化就可以了
+     * <p>
+     * Example usage:
+     * <pre>
+     * public void setData(@Nullable Object data) {
+     *     if (data != null && data instanceof Message) {
+     *         switch (((Message) data).what) {
+     *             case 0:
+     *                 loadData(((Message) data).arg1);
+     *                 break;
+     *             case 1:
+     *                 refreshUI();
+     *                 break;
+     *             default:
+     *                 //do something
+     *                 break;
+     *         }
+     *     }
+     * }
+     *
+     * // call setData(Object):
+     * Message data = new Message();
+     * data.what = 0;
+     * data.arg1 = 1;
+     * fragment.setData(data);
+     * </pre>
+     *
+     * @param data 当不需要参数时 {@code data} 可以�?{@code null}
+     */
+    @Override
+    public void setData(@Nullable Object data) {
+
+    }
+
+
+    @Override
+    public void showMessage(@NonNull String message) {
+        checkNotNull(message);
+        ArmsUtils.snackbarText(message);
+    }
+
+    @Override
+    public void launchActivity(@NonNull Intent intent) {
+        checkNotNull(intent);
+        ArmsUtils.startActivity(intent);
+    }
+
+    @Override
+    public void killMyself() {
+
+    }
+
+
+    @Override
+    public void submitSignOutSuccess(BaseBean baseBean) {
+        switch (ConstantValue.getPushMpm()){
+            case ResultDataUtils.Push_XiaoMi:
+                initDeleteXiaoMiPushAlias();
+                break;
+        }
+        onClearData();
+    }
+
+    /**
+     * 删除小米推送的Alias
+     */
+    private void initDeleteXiaoMiPushAlias(){
+        String familyid = ConstantValue.getPushFamily();
+        MiPushClient.unsetAlias(getActivity(), familyid, null);
+    }
+
+    /**
+     * 清除缓存信息
+     */
+    private void onClearData(){
+        MyApplication.getMyApp().clearData();
+        //清除缓存信息
+        SPUtils.getInstance().remove(ConstantValue.USER_SID);
+        SPUtils.getInstance().remove(ConstantValue.Push_Switch);
+        SPUtils.getInstance().remove(ConstantValue.USER_LOGIN_TYPE);
+        SPUtils.getInstance().remove(ConstantValue.Family_Sid);
+        SPUtils.getInstance().remove(ConstantValue.Push_Family);
+        SPUtils.getInstance().remove(ConstantValue.Family_Auth);
+        SPUtils.getInstance().remove(ConstantValue.Is_Check_Phone);
+
+        ActivityUtils.finishAllActivities();
+        launchActivity(LoginActivity.newInstance(0));
+    }
+
+    @Override
+    public void getAppUpdateSuccess(CheckAppUpdateBean checkAppUpdateBean) {
+        SPUtils.getInstance().put(ConstantValue.Is_Get_Update_App, true);
+        // 判断当前版本标识是不是小于服务器返回的版本标识
+        if (!TextUtils.isEmpty(checkAppUpdateBean.getUrl())){
+            UploadAppDialog dialog = new UploadAppDialog();
+            dialog.show(getFragmentManager(), checkAppUpdateBean, new UploadAppDialog.onAlertDialogChange() {
+                @Override
+                public void onAppDownLoad(String path) {
+                    mFilePath = path;
+                    applyInstallCheckApp();
+                }
+
+                @Override
+                public void onThreeDownLoad() {
+                    if (!TextUtils.isEmpty(checkAppUpdateBean.getUrl())) {
+                        Intent intent = new Intent();
+                        intent.setAction("android.intent.action.VIEW");
+                        Uri content_url = Uri.parse(checkAppUpdateBean.getUrl());
+                        intent.setData(content_url);
+                        startActivity(intent);
+                    }
+                    dialog.dismiss();
+                }
+
+                @Override
+                public void onCancel() {
+                    dialog.dismiss();
+                }
+            });
+        }else{
+            ToastUtils.show(getString(R.string.txt_latest_version));
+        }
+    }
+
+    @Override
+    public void submitLogoutAccountSuccess(LogoutAccountResultBean logoutAccountResultBean) {
+        ToastUtils.show(getString(R.string.txt_logout_account_success));
+        SPUtils.getInstance().remove(ConstantValue.ACCOUNT);
+        SPUtils.getInstance().remove(ConstantValue.PASSWORD);
+        SPUtils.getInstance().remove(ConstantValue.IS_SAVE_PASSWORD);
+        onClearData();
+    }
+
+    @Override
+    public void onDismissProgress() {
+        dismissProgressDialog();
+    }
+
+    @Override
+    public void submitUnbindPhoneSuccess(UnbindPhoneResultBean unbindPhoneResultBean) {
+        if (unbindPhoneResultBean.isSuccess()){
+            if (unbindPhoneResultBean.getFail_items() != null && unbindPhoneResultBean.getFail_items().size() > 0){
+                List<DeviceBaseResultBean.FailItemsBean> failItemsBeans = new ArrayList<>();
+                for (int i = 0; i < unbindPhoneResultBean.getFail_items().size(); i++){
+                    DeviceBaseResultBean.FailItemsBean bean = new DeviceBaseResultBean.FailItemsBean();
+                    bean.setImei(unbindPhoneResultBean.getFail_items().get(i).getImei());
+                    bean.setError_messageX(unbindPhoneResultBean.getFail_items().get(i).getError_messageX());
+                    failItemsBeans.add(bean);
+                }
+                DeviceFailDialog dialog = new DeviceFailDialog();
+                dialog.show(getFragmentManager(), failItemsBeans, 7);
+            }else{
+                ToastUtils.show(getString(R.string.txt_successful_operation));
+                onClearData();
+            }
+        }
+    }
+
+    /**
+     * 检测是否有安装权限，判断当前安卓版本是否大于等于8.0，8.0以上系统设置安装未知来源权限
+     */
+    private void applyInstallCheckApp() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // 是否设置了安装权限
+            boolean isInstallPermission = MyApplication.getMyApp().getPackageManager().canRequestPackageInstalls();
+            if (isInstallPermission) {
+                installApk();
+            } else {
+                installApkSetting();
+            }
+        } else {
+            installApk();
+        }
+    }
+
+    /**
+     * 跳转应用详情页打开安装权限
+     */
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void installApkSetting() {
+        Uri packageUrl = Uri.parse("package:" + MyApplication.getMyApp().getPackageName());
+        Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, packageUrl);
+        startActivityForResult(intent, INSTALL_PERMISS_CODE);
+    }
+
+    /**
+     * 下载完成，提示用户安装，获取安装App(支持7.0)的意图
+     */
+    private void installApk() {
+        //apk文件的本地路径
+        File file = new File(mFilePath);
+        if (!file.exists()) {
+            return;
+        }
+        try {
+            Uri uri;
+            //调用系统安装程序
+            Intent intent = new Intent();
+            intent.addCategory("android.intent.category.DEFAULT");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                uri = FileProvider.getUriForFile(MyApplication.getMyApp(), "com.car.scth.fileprovider", file);
+                intent.setAction(Intent.ACTION_INSTALL_PACKAGE);
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);//7.0以后，系统要求授予临时uri读取权限，安装完毕以后，系统会自动收回权限，该过程没有用户交互
+            } else {
+                uri = Uri.fromFile(file);
+                intent.setAction("android.intent.action.VIEW");
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            }
+            intent.setDataAndType(uri, "application/vnd.android.package-archive");
+            startActivityForResult(intent, INSTALL_APK_RESULT);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (resultCode == Activity.RESULT_OK){
+            if (requestCode == Intent_Group_Manage){
+                SPUtils.getInstance().put(ConstantValue.Is_Refresh_Group_Data, true);
+            }else if (requestCode == INSTALL_PERMISS_CODE) {
+                // 发起安装应用
+                installApk();
+            }
+        }else if (requestCode == INSTALL_PERMISS_CODE) {
+            // 发起安装应用
+            installApk();
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onResume() {
+        MobclickAgent.onPageStart("Mine");//统计页面("MainScreen"为页面名称，可自定义)
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        MobclickAgent.onPageEnd("Mine");
+        super.onPause();
+    }
+
+}

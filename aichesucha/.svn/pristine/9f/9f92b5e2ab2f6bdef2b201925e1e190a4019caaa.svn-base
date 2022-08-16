@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.yinglan.scrolllayout:scrolllayout:1.0.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9643313cccd9dd96c337fa43b6441cdd/jetified-scrolllayout-1.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9643313cccd9dd96c337fa43b6441cdd/jetified-scrolllayout-1.0.2/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yinglan.scrolllayout/scrolllayout/1.0.2/76caba3ddf3aabecad2f0651e8f5337cbf0c5020/scrolllayout-1.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yinglan.scrolllayout/scrolllayout/1.0.2/9a002cb6f89a6aa7ff204bf4e81a75968c4d0a5c/scrolllayout-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

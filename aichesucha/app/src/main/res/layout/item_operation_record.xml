@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.car.scth.mvp.ui.view.ShadowView.ShadowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mShadowLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginStart="@dimen/dp_8"
+    android:layout_marginEnd="@dimen/dp_8"
+    app:hl_cornerRadius="@dimen/dp_10"
+    app:hl_shadowColor="#85d8d8d8"
+    app:hl_shadowLimit="@dimen/dp_6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:text="@string/txt_account"
+            android:textColor="@color/color_5D5D5D"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:text="@string/txt_device_name"
+            android:textColor="@color/color_5D5D5D"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:text="@string/txt_time"
+            android:textColor="@color/color_5D5D5D"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:text="@string/txt_remark"
+            android:textColor="@color/color_00A7FF"
+            android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+</com.car.scth.mvp.ui.view.ShadowView.ShadowLayout>

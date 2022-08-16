@@ -1,0 +1,401 @@
+package com.car.scth.mvp.ui.activity;
+
+import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.amap.api.services.core.LatLonPoint;
+import com.amap.api.services.core.PoiItem;
+import com.amap.api.services.geocoder.GeocodeResult;
+import com.amap.api.services.geocoder.GeocodeSearch;
+import com.amap.api.services.geocoder.RegeocodeQuery;
+import com.amap.api.services.geocoder.RegeocodeResult;
+import com.amap.api.services.geocoder.RegeocodeRoad;
+import com.blankj.utilcode.util.SPUtils;
+import com.jess.arms.base.BaseActivity;
+import com.jess.arms.di.component.AppComponent;
+import com.jess.arms.utils.ArmsUtils;
+import com.car.scth.R;
+import com.car.scth.app.MyApplication;
+import com.car.scth.di.component.DaggerDeviceDetailComponent;
+import com.car.scth.mvp.contract.DeviceDetailContract;
+import com.car.scth.mvp.model.api.ModuleValueService;
+import com.car.scth.mvp.model.bean.DeviceLocationInfoBean;
+import com.car.scth.mvp.model.entity.BaseBean;
+import com.car.scth.mvp.model.putbean.DeviceDetailIntentBean;
+import com.car.scth.mvp.model.putbean.DeviceDetailModifyPutBean;
+import com.car.scth.mvp.presenter.DeviceDetailPresenter;
+import com.car.scth.mvp.utils.CharsFilters;
+import com.car.scth.mvp.utils.ConstantValue;
+import com.car.scth.mvp.utils.DateUtils;
+import com.car.scth.mvp.utils.DeviceUtils;
+import com.car.scth.mvp.utils.LocationAddress;
+import com.car.scth.mvp.utils.ResultDataUtils;
+import com.car.scth.mvp.utils.ToastUtils;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+import static com.jess.arms.utils.Preconditions.checkNotNull;
+
+
+/**
+ * ================================================
+ * Description: 设备详情
+ * <p>
+ * Created by MVPArmsTemplate on 10/30/2020 08:56
+ * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
+ * <a href="https://github.com/JessYanCoding">Follow me</a>
+ * <a href="https://github.com/JessYanCoding/MVPArms">Star me</a>
+ * <a href="https://github.com/JessYanCoding/MVPArms/wiki">See me</a>
+ * <a href="https://github.com/JessYanCoding/MVPArmsTemplate">模版请保持更新</a>
+ * ================================================
+ */
+public class DeviceDetailActivity extends BaseActivity<DeviceDetailPresenter> implements DeviceDetailContract.View {
+
+    @BindView(R.id.tv_device_name)
+    TextView tvDeviceName; // 设备名称
+    @BindView(R.id.tv_device_account)
+    TextView tvDeviceAccount; // 设备账号
+    @BindView(R.id.tv_device_type)
+    TextView tvDeviceType; // 设备类型
+    @BindView(R.id.tv_device_status)
+    TextView tvDeviceStatus; // 设备状态
+    @BindView(R.id.tv_location_time)
+    TextView tvLocationTime; // 定位时间
+    @BindView(R.id.tv_device_iccid)
+    TextView tvDeviceIccid; // 设备iccid
+    @BindView(R.id.tv_opening_time)
+    TextView tvOpeningTime; // 开通时间
+    @BindView(R.id.tv_expire_date)
+    TextView tvExpireDate; // 到期时间
+    @BindView(R.id.tv_contact_person)
+    TextView tvContactPerson; // 联系人
+    @BindView(R.id.tv_bind_mobile)
+    TextView tvBindMobile; // 绑定手机号
+    @BindView(R.id.tv_address)
+    TextView tvAddress; // 地址
+    @BindView(R.id.edt_device_name)
+    EditText edtDeviceName; // 设备名称
+    @BindView(R.id.edt_contact_person)
+    EditText edtContactPerson; // 联系人
+    @BindView(R.id.toolbar_right)
+    TextView toolbarRight; // 编辑与保存
+    @BindView(R.id.tv_copy_iccid)
+    TextView tvCopyIccid; // 复制iccid
+    @BindView(R.id.tv_backup_number)
+    TextView tvBackupNumber; // 备用手机号
+    @BindView(R.id.edt_backup_number)
+    EditText edtBackupNumber; // 备用手机号
+    @BindView(R.id.tv_copy_account)
+    TextView tvCopyAccount; // 复制账号
+    @BindView(R.id.tv_lat_lon)
+    TextView tvLatLon; // 经纬度
+
+    private static final String Key_Detail = "key_detail";
+    private DeviceDetailIntentBean mBean;
+    private boolean isEditState = false; // 是否是编辑状态
+
+    private double selectLatForDevice; // 选中设备的纬度
+    private double selectLonForDevice; // 选中设备的经度
+
+    public static Intent newInstance(DeviceDetailIntentBean bean) {
+        Intent intent = new Intent(MyApplication.getMyApp(), DeviceDetailActivity.class);
+        intent.putExtra(Key_Detail, bean);
+        return intent;
+    }
+
+    @Override
+    public void setupActivityComponent(@NonNull AppComponent appComponent) {
+        DaggerDeviceDetailComponent.builder()
+                .appComponent(appComponent)
+                .view(this)
+                .build()
+                .inject(this);
+    }
+
+    @Override
+    public int initView(@Nullable Bundle savedInstanceState) {
+        return R.layout.activity_device_detail;//setContentView(id);
+    }
+
+    @SuppressLint("SetTextI18n")
+    @Override
+    public void initData(@Nullable Bundle savedInstanceState) {
+        setTitle(getString(R.string.txt_device_detail));
+        toolbarRight.setVisibility(View.VISIBLE);
+        toolbarRight.setText(getString(R.string.txt_edit));
+
+        SPUtils.getInstance().put(ConstantValue.ACTIVITY_STATUS, false);
+
+        mBean = (DeviceDetailIntentBean) getIntent().getSerializableExtra(Key_Detail);
+        edtContactPerson.setFilters(new InputFilter[]{new CharsFilters(), new InputFilter.LengthFilter(20)});
+
+
+        if (mBean != null) {
+            DeviceLocationInfoBean infoBean = DeviceUtils.parseDeviceData(mBean.getLast_pos());
+            if (!TextUtils.isEmpty(mBean.getDevice_number())) {
+                tvDeviceName.setText(mBean.getDevice_number());
+                edtDeviceName.setText(mBean.getDevice_number());
+            }
+            tvDeviceAccount.setText(mBean.getImei() + "");
+            if (mBean.getCar_type().toUpperCase().equals("D3_B")) {
+                tvDeviceType.setText(getString(R.string.txt_D3_version));
+            } else if (mBean.getCar_type().toUpperCase().contains("_P")) {
+                tvDeviceType.setText(mBean.getCar_type().toUpperCase().replace("_P", getString(R.string.txt_update_version)));
+            } else if (mBean.getCar_type().toUpperCase().contains("_E")) {
+                tvDeviceType.setText(mBean.getCar_type().toUpperCase().replace("_E", getString(R.string.txt_low_power_version)));
+            } else {
+                tvDeviceType.setText(mBean.getCar_type().toUpperCase());
+            }
+            switch (mBean.getState()) {
+                case ResultDataUtils.Device_State_Line_Down:
+                    tvDeviceStatus.setText(getString(R.string.txt_state_line_down));
+                    tvDeviceStatus.setTextColor(getResources().getColor(R.color.color_666666));
+                    break;
+                case ResultDataUtils.Device_State_Line_On:
+                    tvDeviceStatus.setText(getString(R.string.txt_state_line_on));
+                    tvDeviceStatus.setTextColor(getResources().getColor(R.color.color_1FC62E));
+                    break;
+                case ResultDataUtils.Device_State_Line_Sleep:
+                    tvDeviceStatus.setText(getString(R.string.txt_state_line_sleep));
+                    tvDeviceStatus.setTextColor(getResources().getColor(R.color.color_E13720));
+                    break;
+            }
+            tvLocationTime.setText(DateUtils.timeConversionDate_two(String.valueOf(infoBean.getTime())));
+            tvDeviceIccid.setText(mBean.getIccid());
+            tvOpeningTime.setText(DateUtils.timedate_2(mBean.getStart_dev_time() + ""));
+            tvExpireDate.setText(DateUtils.timedate_2(mBean.getEnd_dev_time() + ""));
+            if (!TextUtils.isEmpty(mBean.getUser_name())) {
+                tvContactPerson.setText(mBean.getUser_name());
+                edtContactPerson.setText(mBean.getUser_name());
+            }
+            if (!TextUtils.isEmpty(mBean.getBind_phone())) {
+                tvBindMobile.setText(mBean.getBind_phone());
+            }
+            tvBackupNumber.setText(mBean.getBck_phone());
+            edtBackupNumber.setText(mBean.getBck_phone());
+
+            selectLatForDevice = (double) infoBean.getLat() / 1000000;
+            selectLonForDevice = (double) infoBean.getLon() / 1000000;
+            tvLatLon.setText(selectLonForDevice + "," + selectLatForDevice);
+            new LocationAddress().Parsed(selectLatForDevice,selectLonForDevice).setAddressListener(new LocationAddress.getAddressListener() {
+                @Override
+                public void getAddress(String str) {
+                    if (tvAddress != null) {
+                        if (!TextUtils.isEmpty(str)) {
+                            tvAddress.setText(str);
+                        } else {
+                            tvAddress.setText(selectLonForDevice + "," + selectLatForDevice);
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+    @Override
+    public void showMessage(@NonNull String message) {
+        checkNotNull(message);
+        ArmsUtils.snackbarText(message);
+    }
+
+    @Override
+    public void launchActivity(@NonNull Intent intent) {
+        checkNotNull(intent);
+        ArmsUtils.startActivity(intent);
+    }
+
+    @Override
+    public void killMyself() {
+        finish();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
+
+    @OnClick({R.id.toolbar_right, R.id.tv_copy_iccid, R.id.tv_device_account, R.id.tv_address, R.id.tv_device_iccid, R.id.tv_copy_account})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.toolbar_right:
+                onEditForNameAndContactPerson();
+                break;
+            case R.id.tv_device_iccid:
+            case R.id.tv_copy_iccid:
+                onCopyToClipboard(mBean.getIccid());
+                break;
+            case R.id.tv_copy_account:
+            case R.id.tv_device_account:
+                onCopyToClipboard(mBean.getImei() + "");
+                break;
+            case R.id.tv_address:
+                onCopyToClipboard(tvAddress.getText().toString());
+                break;
+        }
+    }
+
+    /**
+     * 复制文本到粘贴管理器
+     *
+     * @param content 复制内容
+     */
+    private void onCopyToClipboard(String content) {
+        // 获取系统剪贴板
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        // 创建一个剪贴数据集，包含一个普通文本数据条目（需要复制的数据）,其他的还有
+        ClipData clipData = ClipData.newPlainText("zeroenterprise", content);
+
+        // 把数据集设置（复制）到剪贴板
+        clipboard.setPrimaryClip(clipData);
+        ToastUtils.show(getString(R.string.txt_copy_success));
+    }
+
+    /**
+     * 编辑与保存
+     */
+    private void onEditForNameAndContactPerson() {
+
+        isEditState = !isEditState;
+        toolbarRight.setText(isEditState ? getString(R.string.txt_save) : getString(R.string.txt_edit));
+        if (isEditState) {
+            onDetailUIShow(false);
+        } else {
+            submitDetailModify();
+        }
+    }
+
+    /**
+     * UI显示
+     *
+     * @param isTextShow 是否显示TextView文字内容
+     */
+    private void onDetailUIShow(boolean isTextShow) {
+        tvDeviceName.setVisibility(View.GONE);
+        tvContactPerson.setVisibility(View.GONE);
+        tvBackupNumber.setVisibility(View.GONE);
+        edtDeviceName.setVisibility(View.GONE);
+        edtContactPerson.setVisibility(View.GONE);
+        edtBackupNumber.setVisibility(View.GONE);
+        if (isTextShow) {
+            tvDeviceName.setVisibility(View.VISIBLE);
+            tvContactPerson.setVisibility(View.VISIBLE);
+            tvBackupNumber.setVisibility(View.VISIBLE);
+        } else {
+            edtDeviceName.setVisibility(View.VISIBLE);
+            edtContactPerson.setVisibility(View.VISIBLE);
+            edtBackupNumber.setVisibility(View.VISIBLE);
+        }
+    }
+
+    /**
+     * 提交修改信息
+     */
+    private void submitDetailModify() {
+        boolean isModifyNumber = false; // 是否有修改设备名称
+        boolean isModifyName = false; // 是否有修改联系人名称
+        boolean isModifyMobile = false; // 是否有修改联系人电话
+        boolean isModifyBackupPhone = false; // 是否有备用手机号码
+        String deviceName = edtDeviceName.getText().toString().trim();
+        String contactPerson = edtContactPerson.getText().toString().trim();
+        String backupPhone = edtBackupNumber.getText().toString().trim();
+        // 判断设备名称是否有更改
+        if (TextUtils.isEmpty(mBean.getDevice_number()) && !TextUtils.isEmpty(deviceName)) {
+            isModifyNumber = true;
+        }
+        if (!TextUtils.isEmpty(mBean.getDevice_number()) && TextUtils.isEmpty(deviceName)) {
+            isModifyNumber = true;
+        }
+        if (!TextUtils.isEmpty(mBean.getDevice_number()) && !TextUtils.isEmpty(deviceName)) {
+            if (!mBean.getDevice_number().equals(deviceName)) {
+                isModifyNumber = true;
+            }
+        }
+        // 判断联系人名称是否有更改
+        if (TextUtils.isEmpty(mBean.getUser_name()) && !TextUtils.isEmpty(contactPerson)) {
+            isModifyName = true;
+        }
+        if (!TextUtils.isEmpty(mBean.getUser_name()) && TextUtils.isEmpty(contactPerson)) {
+            isModifyName = true;
+        }
+        if (!TextUtils.isEmpty(mBean.getUser_name()) && !TextUtils.isEmpty(contactPerson)) {
+            if (!mBean.getUser_name().equals(contactPerson)) {
+                isModifyName = true;
+            }
+        }
+        // 判断备用手机号是否有更改
+        if (TextUtils.isEmpty(mBean.getBck_phone()) && !TextUtils.isEmpty(backupPhone)) {
+            isModifyBackupPhone = true;
+        }
+        if (!TextUtils.isEmpty(mBean.getBck_phone()) && TextUtils.isEmpty(backupPhone)) {
+            isModifyBackupPhone = true;
+        }
+        if (!TextUtils.isEmpty(mBean.getBck_phone()) && !TextUtils.isEmpty(backupPhone)) {
+            if (!mBean.getBck_phone().equals(backupPhone)) {
+                isModifyBackupPhone = true;
+            }
+        }
+
+        if (isModifyNumber || isModifyName || isModifyBackupPhone) {
+            DeviceDetailModifyPutBean.ParamsBean paramsBean = new DeviceDetailModifyPutBean.ParamsBean();
+            if (isModifyNumber) {
+                paramsBean.setCar_number(deviceName);
+            }
+            if (isModifyName) {
+                paramsBean.setUser_name(contactPerson);
+            }
+            if (isModifyBackupPhone) {
+                paramsBean.setUser_phone(backupPhone);
+            }
+            paramsBean.setSimei(mBean.getSimei());
+
+            DeviceDetailModifyPutBean bean = new DeviceDetailModifyPutBean();
+            bean.setFunc(ModuleValueService.Fuc_For_Modify_Device_Detail);
+            bean.setModule(ModuleValueService.Module_For_Modify_Device_Detail);
+            bean.setParams(paramsBean);
+
+            if (getPresenter() != null) {
+                isEditState = true;
+                toolbarRight.setText(getString(R.string.txt_save));
+                getPresenter().submitDetailModify(bean);
+            }
+        } else {
+            onDetailUIShow(true);
+        }
+    }
+
+    @Override
+    public void submitDetailModifySuccess(BaseBean baseBean) {
+        ToastUtils.show(getString(R.string.txt_set_success));
+
+        if (!TextUtils.isEmpty(edtDeviceName.getText().toString().trim())) {
+            tvDeviceName.setText(edtDeviceName.getText().toString().trim());
+        } else {
+            tvDeviceName.setText("");
+        }
+        tvContactPerson.setText(edtContactPerson.getText().toString().trim());
+        tvBackupNumber.setText(edtBackupNumber.getText().toString().trim());
+        mBean.setDevice_number(edtDeviceName.getText().toString().trim());
+        mBean.setUser_name(edtContactPerson.getText().toString().trim());
+        mBean.setBck_phone(edtBackupNumber.getText().toString().trim());
+
+        onDetailUIShow(true);
+        isEditState = false;
+        toolbarRight.setText(getString(R.string.txt_edit));
+    }
+
+}

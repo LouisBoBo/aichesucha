@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.microshow:RxFFmpeg:4.8.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6993738bceb46343fdf0d84689048b1b/jetified-RxFFmpeg-4.8.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6993738bceb46343fdf0d84689048b1b/jetified-RxFFmpeg-4.8.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.microshow/RxFFmpeg/4.8.0/9383918d0e4cf0876666d42fa2f9f137f4857def/RxFFmpeg-4.8.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

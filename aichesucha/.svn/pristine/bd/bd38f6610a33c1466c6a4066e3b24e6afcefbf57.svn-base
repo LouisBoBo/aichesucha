@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F8F8F8"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/color_FFFFFF"
+        android:orientation="vertical">
+
+        <com.car.scth.mvp.ui.view.ClearEditText
+            android:id="@+id/edt_account"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:background="@color/transparent"
+            android:hint="@string/txt_input_account_two_hint"
+            android:inputType="text"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_999999"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:background="@color/color_E5E5E5" />
+
+        <com.car.scth.mvp.ui.view.ClearEditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:background="@color/transparent"
+            android:hint="@string/txt_input_email_optional"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_999999"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:background="@color/color_E5E5E5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:orientation="horizontal">
+
+            <com.car.scth.mvp.ui.view.ClearEditText
+                android:id="@+id/edt_code"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:hint="@string/txt_input_email_code_hint"
+                android:textColor="@color/color_333333"
+                android:textColorHint="@color/color_999999"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/tv_send_code"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="@dimen/dp_25"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/bg_00b4b7_12"
+                android:gravity="center"
+                android:text="@string/txt_get_code"
+                android:textColor="@color/color_2E7BEC"
+                android:textSize="@dimen/sp_10" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:background="@color/color_E5E5E5" />
+
+        <com.car.scth.mvp.ui.view.ClearEditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:background="@color/transparent"
+            android:digits="0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM._"
+            android:hint="@string/txt_password_hint"
+            android:inputType="textPassword"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_999999"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:background="@color/color_E5E5E5" />
+
+        <com.car.scth.mvp.ui.view.ClearEditText
+            android:id="@+id/edt_password_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:background="@color/transparent"
+            android:digits="0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM._"
+            android:hint="@string/txt_input_password_confirm"
+            android:inputType="textPassword"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_999999"
+            android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/bg_00a7ff_30"
+        android:gravity="center"
+        android:text="@string/txt_register"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="@dimen/sp_16" />
+
+</LinearLayout>
